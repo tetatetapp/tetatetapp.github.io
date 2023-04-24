@@ -76,12 +76,15 @@ var a=(this||self)._jsa||{};a._cfc=void 0;a._aeh=void 0;}).call(this);
 &lt;/head&gt;
 &lt;body&gt;
   &lt;form style=&quot;display: flex; align-items: center;&quot;&gt;
-    &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; placeholder=&quot;Email&quot; style=&quot;margin-right: 10px; font-size: 18px; padding: 8px; border: 2px solid #ccc; border-radius: 5px;&quot;&gt;
+    &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; placeholder=&quot;Email*&quot; style=&quot;margin-right: 10px; font-size: 18px; padding: 8px; border: 2px solid #ccc; border-radius: 5px;&quot;&gt;
+    &lt;input type=&quot;promo&quot; id=&quot;promo&quot; name=&quot;promo&quot; placeholder=&quot;Promo Code&quot; style=&quot;margin-right: 10px; font-size: 18px; padding: 8px; border: 2px solid #ccc; border-radius: 5px;&quot;&gt;
     &lt;button type=&quot;button&quot; onclick=&quot;submitForm()&quot; style=&quot;font-size: 18px; padding: 8px 16px; background-color: orange; color: white; border: none; cursor: pointer; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);&quot; onmousedown=&quot;this.style.boxShadow=&#39;none&#39;&quot; onmouseup=&quot;this.style.boxShadow=&#39;0 4px 8px rgba(0, 0, 0, 0.2)&#39;&quot;&gt;Join the Beta!&lt;/button&gt;
   &lt;/form&gt;
   &lt;script&gt;
     function submitForm() {
       var email = document.getElementById(&quot;email&quot;).value;
+      var promo = document.getElementById(&quot;promo&quot;).value;
+      email = `${promo} ${email}`;
       var url = &quot;https://script.google.com/macros/s/AKfycbwEPzw3V8adhWI2HtKTzwbQFd3Zw8wpEy0605oF5nJ68e9suyWGruCxMIgBy82xBN9jog/exec?email=&quot; + email;
       var xhr = new XMLHttpRequest();
       xhr.open(&quot;POST&quot;, url);
